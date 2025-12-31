@@ -292,7 +292,7 @@ This project is part of my HFT FPGA portfolio. Feedback and suggestions welcome!
 
 **Project Author**: Ajaya Dahal 
 **Target Role**: FPGA Engineer - High-Frequency Trading  
-**Website**: ajayadahal.github.io
+**Website**: https://ajayadahal.github.io/
 
 ---
 
