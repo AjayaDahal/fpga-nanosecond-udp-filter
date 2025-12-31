@@ -290,10 +290,9 @@ This project is part of my HFT FPGA portfolio. Feedback and suggestions welcome!
 
 ## 📧 Contact
 
-**Project Author**: [Your Name]  
+**Project Author**: Ajaya Dahal 
 **Target Role**: FPGA Engineer - High-Frequency Trading  
-**LinkedIn**: [Your LinkedIn]  
-**GitHub**: [Your GitHub]
+**Website**: ajayadahal.github.io
 
 ---
 
