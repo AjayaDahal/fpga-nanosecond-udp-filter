@@ -1,0 +1,74 @@
+MIT License
+
+Copyright (c) 2024 [Your Name]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+FPGA-SPECIFIC DISCLAIMERS
+================================================================================
+
+HARDWARE IMPLEMENTATION NOTICE:
+This HDL design is provided for educational and prototyping purposes. Before
+deploying to production hardware, you must:
+
+1. TIMING CLOSURE: Verify timing constraints are met for your target FPGA
+   device and clock frequencies. Failing to meet timing can cause data
+   corruption or system instability.
+
+2. RESOURCE UTILIZATION: Confirm the design fits within your device's resource
+   budget (LUTs, FFs, BRAMs, DSPs) and does not cause routing congestion.
+
+3. FUNCTIONAL VERIFICATION: Perform comprehensive simulation and hardware
+   testing under realistic operating conditions, including corner cases and
+   stress testing.
+
+4. CLOCK DOMAIN CROSSING: Verify all CDC (Clock Domain Crossing) logic is
+   correctly implemented with proper synchronizers and metastability handling.
+
+5. POWER ANALYSIS: Ensure dynamic and static power consumption is within your
+   board's power delivery capabilities and thermal limits.
+
+6. SIGNAL INTEGRITY: Validate high-speed interfaces (Ethernet, PCIe) meet
+   signal integrity requirements (impedance matching, termination, layout).
+
+XILINX IP DISCLAIMER:
+This project may instantiate or reference Xilinx IP cores (AXI Ethernet
+Subsystem, TEMAC, etc.) which are subject to Xilinx's End User License
+Agreement (EULA). You must have appropriate Xilinx licenses to synthesize
+and implement designs using these IP cores.
+
+ETHERNET COMPLIANCE:
+This design processes Ethernet packets but does not implement full IEEE 802.3
+compliance. For production use in networking equipment, ensure compliance with
+relevant standards and regulations.
+
+HIGH-FREQUENCY TRADING NOTICE:
+This design is intended for educational demonstration of FPGA techniques
+applicable to low-latency trading systems. Production HFT systems require:
+- Extensive validation and testing
+- Risk management and circuit breakers
+- Regulatory compliance (SEC, CFTC, exchange rules)
+- Professional code review and audit trails
+
+NO LIABILITY:
+The authors assume no liability for financial losses, hardware damage, or
+regulatory violations resulting from use of this design.
+
+================================================================================
