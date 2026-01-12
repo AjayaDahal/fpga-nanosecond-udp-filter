@@ -34,7 +34,7 @@ module ethernet_init (
     localparam ADDR_TCW  = 32'h0000_0408; // TX Config Word
     
     // Commands (Bit 28 = Enable)
-    localparam CMD_ENABLE = 32'h1000_0000;
+    localparam CMD_ENABLE = 32'h1000_0010;
 
     // States
     localparam S_IDLE       = 0;

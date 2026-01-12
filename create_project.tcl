@@ -46,18 +46,18 @@
 proc checkRequiredFiles { origin_dir} {
   set status true
   set files [list \
- "[file normalize "$origin_dir/udp_filter.srcs/sources_1/new/udp_filter.v"]"\
- "[file normalize "$origin_dir/udp_filter.srcs/sources_1/imports/HFT training/fsm/fsm.srcs/sources_1/new/packet_parser.v"]"\
- "[file normalize "$origin_dir/udp_filter.srcs/sources_1/new/init_ethernet.v"]"\
- "[file normalize "$origin_dir/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/fifomem.v"]"\
- "[file normalize "$origin_dir/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/rptr_empty.v"]"\
- "[file normalize "$origin_dir/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/wptr_full.v"]"\
- "[file normalize "$origin_dir/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/sync_r2w.v"]"\
- "[file normalize "$origin_dir/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/sync_w2r.v"]"\
- "[file normalize "$origin_dir/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/bin2gray.v"]"\
- "[file normalize "$origin_dir/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/gray2bin.v"]"\
- "[file normalize "$origin_dir/udp_filter.srcs/sim_1/new/tb_design_1.v"]"\
- "[file normalize "$origin_dir/udp_filter.srcs/sim_1/new/tb_udp_filter.v"]"\
+ "[file normalize "$origin_dir/udp_filter.v"]"\
+ "[file normalize "$origin_dir/packet_parser.v"]"\
+ "[file normalize "$origin_dir/init_ethernet.v"]"\
+ "[file normalize "$origin_dir/fifomem.v"]"\
+ "[file normalize "$origin_dir/rptr_empty.v"]"\
+ "[file normalize "$origin_dir/wptr_full.v"]"\
+ "[file normalize "$origin_dir/sync_r2w.v"]"\
+ "[file normalize "$origin_dir/sync_w2r.v"]"\
+ "[file normalize "$origin_dir/bin2gray.v"]"\
+ "[file normalize "$origin_dir/gray2bin.v"]"\
+ "[file normalize "$origin_dir/tb_design_1.v"]"\
+ "[file normalize "$origin_dir/tb_udp_filter.v"]"\
   ]
   foreach ifile $files {
     if { ![file isfile $ifile] } {
@@ -155,30 +155,6 @@ set proj_dir [get_property directory [current_project]]
 # Reconstruct message rules
 # None
 
-# Set project properties
-set obj [current_project]
-set_property -name "board_part_repo_paths" -value "C:/Users/ajaya/AppData/Roaming/Xilinx/Vivado/2024.2/xhub/board_store/xilinx_board_store E:/Software/Vivado/2023.2/data/boards/board_files" -objects $obj
-set_property -name "default_lib" -value "xil_defaultlib" -objects $obj
-set_property -name "enable_resource_estimation" -value "0" -objects $obj
-set_property -name "enable_vhdl_2008" -value "1" -objects $obj
-set_property -name "ip_cache_permissions" -value "read write" -objects $obj
-set_property -name "ip_output_repo" -value "$proj_dir/${_xil_proj_name_}.cache/ip" -objects $obj
-set_property -name "mem.enable_memory_map_generation" -value "1" -objects $obj
-set_property -name "part" -value "xcvu37p-fsvh2892-3-e" -objects $obj
-set_property -name "revised_directory_structure" -value "1" -objects $obj
-set_property -name "sim.central_dir" -value "$proj_dir/${_xil_proj_name_}.ip_user_files" -objects $obj
-set_property -name "sim.ip.auto_export_scripts" -value "1" -objects $obj
-set_property -name "simulator_language" -value "Mixed" -objects $obj
-set_property -name "sim_compile_state" -value "1" -objects $obj
-set_property -name "use_inline_hdl_ip" -value "1" -objects $obj
-set_property -name "webtalk.activehdl_export_sim" -value "1" -objects $obj
-set_property -name "webtalk.modelsim_export_sim" -value "1" -objects $obj
-set_property -name "webtalk.questa_export_sim" -value "1" -objects $obj
-set_property -name "webtalk.riviera_export_sim" -value "1" -objects $obj
-set_property -name "webtalk.xsim_export_sim" -value "1" -objects $obj
-set_property -name "webtalk.xsim_launch_sim" -value "2" -objects $obj
-set_property -name "xpm_libraries" -value "XPM_CDC XPM_FIFO XPM_MEMORY" -objects $obj
-
 # Create 'sources_1' fileset (if not found)
 if {[string equal [get_filesets -quiet sources_1] ""]} {
   create_fileset -srcset sources_1
@@ -188,16 +164,16 @@ if {[string equal [get_filesets -quiet sources_1] ""]} {
 set obj [get_filesets sources_1]
 # Import local files from the original project
 set files [list \
- [file normalize "${origin_dir}/udp_filter.srcs/sources_1/new/udp_filter.v" ]\
- [file normalize "${origin_dir}/udp_filter.srcs/sources_1/imports/HFT training/fsm/fsm.srcs/sources_1/new/packet_parser.v"]\
- [file normalize "${origin_dir}/udp_filter.srcs/sources_1/new/init_ethernet.v" ]\
- [file normalize "${origin_dir}/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/fifomem.v"]\
- [file normalize "${origin_dir}/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/rptr_empty.v"]\
- [file normalize "${origin_dir}/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/wptr_full.v"]\
- [file normalize "${origin_dir}/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/sync_r2w.v"]\
- [file normalize "${origin_dir}/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/sync_w2r.v"]\
- [file normalize "${origin_dir}/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/bin2gray.v"]\
- [file normalize "${origin_dir}/udp_filter.srcs/sources_1/imports/HFT training/aync_fifo/aync_fifo.srcs/sources_1/new/gray2bin.v"]\
+ [file normalize "${origin_dir}/udp_filter.v" ]\
+ [file normalize "${origin_dir}/packet_parser.v"]\
+ [file normalize "${origin_dir}/init_ethernet.v" ]\
+ [file normalize "${origin_dir}/fifomem.v"]\
+ [file normalize "${origin_dir}/rptr_empty.v"]\
+ [file normalize "${origin_dir}/wptr_full.v"]\
+ [file normalize "${origin_dir}/sync_r2w.v"]\
+ [file normalize "${origin_dir}/sync_w2r.v"]\
+ [file normalize "${origin_dir}/bin2gray.v"]\
+ [file normalize "${origin_dir}/gray2bin.v"]\
 ]
 set imported_files ""
 foreach f $files {
@@ -228,7 +204,7 @@ set obj [get_filesets constrs_1]
 
 # Set 'constrs_1' fileset properties
 set obj [get_filesets constrs_1]
-set_property -name "target_part" -value "xcvu37p-fsvh2892-3-e" -objects $obj
+#set_property -name "target_part" -value "xcvu37p-fsvh2892-3-e" -objects $obj
 
 # Create 'sim_1' fileset (if not found)
 if {[string equal [get_filesets -quiet sim_1] ""]} {
@@ -239,8 +215,8 @@ if {[string equal [get_filesets -quiet sim_1] ""]} {
 set obj [get_filesets sim_1]
 # Import local files from the original project
 set files [list \
- [file normalize "${origin_dir}/udp_filter.srcs/sim_1/new/tb_design_1.v" ]\
- [file normalize "${origin_dir}/udp_filter.srcs/sim_1/new/tb_udp_filter.v" ]\
+ [file normalize "${origin_dir}/tb_design_1.v" ]\
+ [file normalize "${origin_dir}/tb_udp_filter.v" ]\
 ]
 set imported_files ""
 foreach f $files {
@@ -273,13 +249,13 @@ set obj [get_filesets utils_1]
 
 # Adding sources referenced in BDs, if not already added
 if { [get_files [list udp_filter.v]] == "" } {
-  import_files -quiet -fileset sources_1 D:/HFT training/udp_filter/udp_filter.srcs/sources_1/new/udp_filter.v
+  import_files -quiet -fileset sources_1 ./udp_filter.v
 }
 if { [get_files [list packet_parser.v]] == "" } {
-  import_files -quiet -fileset sources_1 D:/HFT training/udp_filter/udp_filter.srcs/sources_1/imports/HFT training/fsm/fsm.srcs/sources_1/new/packet_parser.v
+  import_files -quiet -fileset sources_1 ./packet_parser.v
 }
 if { [get_files [list init_ethernet.v]] == "" } {
-  import_files -quiet -fileset sources_1 D:/HFT training/udp_filter/udp_filter.srcs/sources_1/new/init_ethernet.v
+  import_files -quiet -fileset sources_1 ./init_ethernet.v
 }
 
 
